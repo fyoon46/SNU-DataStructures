@@ -4,7 +4,7 @@ public class ReverseString {
     private static String reverse(String s) {
         ArrayStack<Character> st = new ArrayStack<>(s.length());
         for (int i = 0; i < s.length(); i++)
-            st.push(s.charAt(i));
+            st.push(s.charAt(i));   // s의 i번 문자. 번호는 0번부터.
         StringBuilder output = new StringBuilder();
         while (!st.isEmpty())
             output.append(st.pop());
