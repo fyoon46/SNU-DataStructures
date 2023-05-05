@@ -89,7 +89,7 @@ public class IntegerArrayList implements IntegerListInterface {
     }
 
     // [연습문제 5-3][알고리즘 5-7] 구현: 원소 x가 배열 리스트의 몇 번째 원소인지 알려주기
-    private final int NOT_FOUND = -12345;
+    public static final int NOT_FOUND = -12345;
 
     @Override
     public int indexOf(Integer x) {

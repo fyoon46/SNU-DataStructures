@@ -34,7 +34,7 @@ public class LinkedList<E> implements ListInterface<E> {
         }
     }
 
-    private final int NOT_FOUND = -12345;
+    public static final int NOT_FOUND = -12345;
 
     @Override
     public int index(E x) {

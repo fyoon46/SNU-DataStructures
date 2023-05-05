@@ -86,7 +86,7 @@ public class CircularDoublyLinkedList<E> implements ListInterface<E> {
         } else { /* 에러 처리 */ }
     }
 
-    private final int NOT_FOUND = -12345;
+    public static final int NOT_FOUND = -12345;
 
     @Override
     public int indexOf(E x) {

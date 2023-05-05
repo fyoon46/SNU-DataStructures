@@ -1,4 +1,7 @@
-package source.list;
+package exam.ds2022;
+
+import source.list.ListInterface;
+import source.list.Node;
 
 @SuppressWarnings({"StatementWithEmptyBody", "unused", "unchecked", "rawtypes"})
 public class CircularLinkedList<E> implements ListInterface<E> {
@@ -65,13 +68,25 @@ public class CircularLinkedList<E> implements ListInterface<E> {
             currNode = currNode.next;
             if (((Comparable) (currNode.item)).compareTo(x) == 0) {
                 prevNode.next = currNode.next;
-                if (currNode == tail)
-                    tail = prevNode;
                 numItems--;
                 return true;
             }
         }
         return false; // not found
+    }
+
+    public void reverse() {
+        if (numItems > 1) {
+            Node<E> prev = tail.next;
+            Node<E> curr = prev.next;
+            tail = curr;
+            for (int i = 0; i <= numItems; i++) {
+                Node<E> next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+        }
     }
 
     @Override

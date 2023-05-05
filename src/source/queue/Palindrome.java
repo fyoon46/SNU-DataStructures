@@ -1,12 +1,12 @@
 package source.queue;
 
-import source.stack.LinkedStack;
+import source.stack.ArrayStack;
 
 @SuppressWarnings("StatementWithEmptyBody")
 public class Palindrome {
     public static boolean isPalindrome(String A) {
-        LinkedStack<Character> s = new LinkedStack<>();
-        LinkedQueue<Character> q = new LinkedQueue<>();
+        ArrayStack<Character> s = new ArrayStack<>(A.length());
+        ArrayQueue<Character> q = new ArrayQueue<>(A.length());
         for (int i = 0; i < A.length(); i++) {
             s.push(A.charAt(i));   // 문자열 A의 i번째 문자
             q.enqueue(A.charAt(i));

@@ -71,7 +71,7 @@ public class DoublyLinkedList {
             return null;
     }
 
-    private final int NOT_FOUND = -12345;
+    public static final int NOT_FOUND = -12345;
 
     public int indexOf(Integer x) {
         BidirectionalNode currNode = head;
