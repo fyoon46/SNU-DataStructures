@@ -1,10 +1,11 @@
 package source.hashTable;
 
+import source.BST.IndexInterface;
 import source.list.LinkedList;
 import source.list.Node;
 
-@SuppressWarnings({"FieldMayBeFinal", "unchecked", "StatementWithEmptyBody"})
-public class ChainedHashTable {
+@SuppressWarnings({"FieldMayBeFinal", "unchecked", "StatementWithEmptyBody", "rawtypes"})
+public class ChainedHashTable implements IndexInterface<Node<Integer>> {
     private LinkedList<Integer>[] table;
     int numItems;
 
@@ -20,35 +21,41 @@ public class ChainedHashTable {
     }
 
     // [알고리즘 12-1] 구현: 검색, 삽입, 삭제
-    public void insert(Integer x) {
-        int slot = hash(x);
-        table[slot].add(0, x);
+    @Override
+    public void insert(Comparable x) {
+        int slot = hash((Integer) x);
+        table[slot].add(0, (Integer) x);
         numItems++;
     }
 
-    public Node<Integer> search(Integer x) {
-        int slot = hash(x);
+    @Override
+    public Node<Integer> search(Comparable x) {
+        int slot = hash((Integer) x);
         if (table[slot].isEmpty()) return null; // null list
         else {
-            int i = table[slot].indexOf(x);
+            int i = table[slot].indexOf((Integer) x);
             if (i == LinkedList.NOT_FOUND) return null; // not exist
             else return table[slot].getNode(i);
         }
     }
 
-    public void delete(Integer x) {
+    @Override
+    public void delete(Comparable x) {
         if (isEmpty()) { /* 에러처리 */ }
         else {
-            int slot = hash(x);
-            table[slot].removeItem(x);
+            int slot = hash((Integer) x);
+            table[slot].removeItem((Integer) x);
             numItems--;
         }
     }
 
+    // 기타
+    @Override
     public boolean isEmpty() {
         return numItems == 0;
     }
 
+    @Override
     public void clear() {
         for (int i = 0; i < table.length; i++)
             table[i] = new LinkedList<>();
