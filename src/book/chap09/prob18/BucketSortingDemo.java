@@ -9,7 +9,7 @@ public class BucketSortingDemo {
     }
 
     public static void main(String[] args) {
-        int N = 10000000;
+        int N = 1000000;
         BucketSorting s = new BucketSorting(N);
         long start, finish, elapsedTime;
         final long FOR_MICRO = 1000, FOR_MILI = 1000000, FOR_SEC = 1000000000;

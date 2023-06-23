@@ -38,7 +38,7 @@ public class BucketSorting {
     }
 
     public void bucketSort2() {
-        // A[0...]: 음이 아닌 정수 범위에서 균등 분포 배열
+        // A[0...]: 음이 아닌 정수 범위에서 균등 분포 배열int
         int numLists = A.length;
         int[] cnt = new int[numLists];
         for (int i = 0; i < numLists; i++)
